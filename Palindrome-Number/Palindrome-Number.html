@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Number</title>
+</head>
+<body>
+<script type="text/javascript">
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    var str = x.toString(),
+        len = str.length,
+        is_odd = len % 2,
+        half_len = is_odd ? ((len - 1) / 2) : (len / 2);
+        console.log(str, typeof str);
+
+        while (half_len--) {
+            if (str.charAt(half_len) !== str.charAt(len - 1 - half_len)) {
+                return false;
+            }
+        }
+
+        return true;
+};
+
+var s, r;
+
+// s = '1234321';
+// r = isPalindrome(s);
+// console.log(r);
+
+s = '-2147483648';
+r = isPalindrome(s);
+console.log(r);
+
+// s = '12344321';
+// r = isPalindrome(s);
+// console.log(r);
+</script>
+</body>
+</html>
